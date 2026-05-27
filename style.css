@@ -77,16 +77,16 @@ nav ul a:hover::after { width: 100%; }
     url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 100px 20px 60px;
     gap: 15px;
 }
+
 .hero-tag {
     font-size: 0.95rem;
     color: #c9a8ff;
@@ -125,6 +125,33 @@ nav ul a:hover::after { width: 100%; }
 }
 
 .btn:hover { background: #a764ff; }
+
+/* HERO AVEC PHOTO */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hero-img img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #a764ff;
+    box-shadow: 0 0 40px rgba(167, 100, 255, 0.4);
+}
 
 /* SECTIONS */
 section { padding: 100px 20px; }
@@ -165,6 +192,24 @@ section h2::after {
     color: #d4b8ff;
     max-width: 700px;
     font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.apropos-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.apropos-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 3px solid #a764ff;
+    box-shadow: 0 10px 40px rgba(167, 100, 255, 0.3);
+    flex-shrink: 0;
 }
 
 /* COMPÉTENCES */
@@ -396,44 +441,132 @@ footer {
     letter-spacing: 1px;
 }
 
-/* HERO AVEC PHOTO */
-.hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    flex-wrap: wrap;
-    text-align: left;
-}
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
 
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+    header {
+        padding: 12px 15px;
+    }
 
-.hero-img img {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #a764ff;
-    box-shadow: 0 0 40px rgba(167, 100, 255, 0.4);
-}
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
 
-/* À PROPOS AVEC PHOTO */
-.apropos-inner {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    flex-wrap: wrap;
-}
+    nav h1 {
+        font-size: 1.2rem;
+    }
 
-.apropos-photo {
-    width: 250px;
-    height: 250px;
-    border-radius: 16px;
-    object-fit: cover;
-    border: 3px solid #a764ff;
-    box-shadow: 0 10px 40px rgba(167, 100, 255, 0.3);
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul a {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    #hero {
+        padding: 140px 15px 60px;
+    }
+
+    #hero h2 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        word-break: break-word;
+    }
+
+    .hero-tag {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-sub {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-text {
+        align-items: center;
+    }
+
+    .hero-img img {
+        width: 180px;
+        height: 180px;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+
+    .apropos-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .apropos-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    #apropos p {
+        font-size: 0.95rem;
+    }
+
+    .competences-grid {
+        gap: 12px;
+    }
+
+    .competence-card {
+        flex: 1 1 120px;
+        max-width: 150px;
+        padding: 15px 10px;
+    }
+
+    .competence-card i {
+        font-size: 2rem;
+    }
+
+    .competence-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .competence-card p {
+        font-size: 0.75rem;
+    }
+
+    .projets-grid {
+        gap: 20px;
+    }
+
+    .projet-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .contact-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-contact {
+        width: 100%;
+        justify-content: center;
+    }
 }
